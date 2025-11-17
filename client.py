@@ -33,7 +33,6 @@ def main():
     print("Commands: /nick NAME, /who, /time, /quit")
     print("Type messages and press Enter to send.\n")
 
-    # Start listener thread
     threading.Thread(target=receive_messages, args=(sock,), daemon=True).start()
 
     try:
