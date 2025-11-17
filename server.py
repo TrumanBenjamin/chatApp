@@ -79,7 +79,6 @@ def handle_client(sock, address):
                         f"[SERVER] Server time: {now}\n".encode("utf-8")
                     )
 
-                # /quit → disconnect
                 elif command == "/quit":
                     sock.sendall(b"[SERVER] Goodbye!\n")
                     break
@@ -88,7 +87,6 @@ def handle_client(sock, address):
                     sock.sendall(b"[SERVER] Unknown command.\n")
 
             else:
-                # Normal chat message → broadcast
                 nickname = clients.get(sock, "Unknown")
                 broadcast(f"{nickname}: {text}\n", sender_sock=sock)
 

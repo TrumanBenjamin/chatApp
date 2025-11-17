@@ -29,6 +29,6 @@ Development and testing were done using Visual Studio Code. Multiple terminals w
 
 # Future Work
 
-One big thing I need to do a better job of is pushing to Github regularly! This is not specific to this project, but is a relevant aspect of this project. Because I am working on this project alone, I often do the work without pushing to Github, but when I'm working with a group it is essential to keep your repositories up to date. This is something I will work on more in the future. 
-* Item 2 One thing I could easily implement in the future is timestamps for all messages sent. This helps users know when a message has been sent, similar to how email is set up. 
-* Item 3 The last thing I would like to do with this project is create a visually appealing graphical user interface for the chat client. This will make the software much more usable, and the design can fit any use-case needed (internal company communications, communication between friends, messaging between teammates in a game, etc.).
+* One big thing I need to do a better job of is pushing to Github regularly! This is not specific to this project, but is a relevant aspect of this project. Because I am working on this project alone, I often do the work without pushing to Github, but when I'm working with a group it is essential to keep your repositories up to date. This is something I will work on more in the future. 
+* One thing I could easily implement in the future is timestamps for all messages sent. This helps users know when a message has been sent, similar to how email is set up. 
+* The last thing I would like to do with this project is create a visually appealing graphical user interface for the chat client. This will make the software much more usable, and the design can fit any use-case needed (internal company communications, communication between friends, messaging between teammates in a game, etc.).
