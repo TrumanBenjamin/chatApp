@@ -2,12 +2,11 @@ import socket
 import threading
 import sys
 
-SERVER_HOST = "127.0.0.1"  # change to server IP when testing on two machines
+SERVER_HOST = "127.0.0.1"
 SERVER_PORT = 5000
 
 
 def receive_messages(sock: socket.socket):
-    """Background thread: print messages from server."""
     try:
         while True:
             data = sock.recv(1024)
@@ -19,7 +18,6 @@ def receive_messages(sock: socket.socket):
         print("[INFO] Connection closed.")
     finally:
         sock.close()
-        # Exit the whole program once reading stops
         sys.exit(0)
 
 

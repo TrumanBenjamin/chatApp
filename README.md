@@ -17,20 +17,18 @@ Messages are sent as USF-8 encoded text. Clients can send either text chat messa
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
 This project was developed using Python, the built-in socket module for network communication, and the "threading" module to support multiple clients at once. No external libraries were required for this project. 
 
-{Describe the programming language that you used and any libraries.}
+Development and testing were done using Visual Studio Code. Multiple terminals were used at the same time to simulate multiple clients connecting to the server. 
+
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Python Docs- Socket]https://docs.python.org/3/library/socket.html
+* [Geeksforgeeks- Socket Programming in Python]https://www.geeksforgeeks.org/python/socket-programming-python/
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+One big thing I need to do a better job of is pushing to Github regularly! This is not specific to this project, but is a relevant aspect of this project. Because I am working on this project alone, I often do the work without pushing to Github, but when I'm working with a group it is essential to keep your repositories up to date. This is something I will work on more in the future. 
+* Item 2 One thing I could easily implement in the future is timestamps for all messages sent. This helps users know when a message has been sent, similar to how email is set up. 
+* Item 3 The last thing I would like to do with this project is create a visually appealing graphical user interface for the chat client. This will make the software much more usable, and the design can fit any use-case needed (internal company communications, communication between friends, messaging between teammates in a game, etc.).
