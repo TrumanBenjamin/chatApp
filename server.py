@@ -2,26 +2,23 @@ import socket
 import threading
 import datetime
 
-HOST = "0.0.0.0"   # listen on all interfaces
-PORT = 5000        # you can change this if needed
+HOST = "0.0.0.0"
+PORT = 5000
 
-clients = {}       # socket -> nickname
+clients = {}
 
 
 def broadcast(message, sender_sock=None):
-    """Send message to all connected clients except optional sender."""
     for sock in list(clients.keys()):
         if sock is sender_sock:
             continue
         try:
             sock.sendall(message.encode("utf-8"))
         except Exception:
-            # If send fails, drop that client
             remove_client(sock)
 
 
 def remove_client(sock):
-    """Remove client from dict and close socket."""
     nickname = clients.get(sock, "Unknown")
     if sock in clients:
         del clients[sock]
@@ -34,11 +31,9 @@ def remove_client(sock):
 
 
 def handle_client(sock, address):
-    """Handle messages from a single client."""
     print(f"[NEW CONNECTION] {address}")
 
-    # Default nickname based on address
-    nickname = f"User_{address[1]}"
+    nickname = f"User_{address[1]}" 
     clients[sock] = nickname
     sock.sendall(f"[SERVER] Welcome, {nickname}!\n".encode("utf-8"))
     broadcast(f"[SERVER] {nickname} has joined the chat.\n", sender_sock=sock)
@@ -47,18 +42,16 @@ def handle_client(sock, address):
         while True:
             data = sock.recv(1024)
             if not data:
-                break  # client closed connection
+                break
 
             text = data.decode("utf-8").strip()
             if not text:
                 continue
 
-            # Handle commands that start with "/"
             if text.startswith("/"):
                 parts = text.split(maxsplit=1)
                 command = parts[0].lower()
 
-                # /nick NEWNAME
                 if command == "/nick":
                     if len(parts) < 2:
                         sock.sendall(b"[SERVER] Usage: /nick NEWNAME\n")
@@ -74,14 +67,12 @@ def handle_client(sock, address):
                         sender_sock=sock,
                     )
 
-                # /who  → list users
                 elif command == "/who":
                     names = ", ".join(clients.values())
                     sock.sendall(
                         f"[SERVER] Connected users: {names}\n".encode("utf-8")
                     )
 
-                # /time → server time (extra nice-to-have)
                 elif command == "/time":
                     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                     sock.sendall(
